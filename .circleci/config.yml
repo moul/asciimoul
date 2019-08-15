@@ -58,4 +58,4 @@ workflows:
   main:
     jobs:
       - go-build
-      - docker-build
+#      - docker-build
