@@ -1,22 +1,41 @@
 package asciimoul
 
+import "strings"
+
 const Head = `
-      ++
+   ++
+   ++++
+    ++++
+  ++++++++++
+ +++       |
+ ++         |
+ +  -==   ==|
+(   <*>   <*>
+ |           |
+ |         __|
+ |      +++
+  \      =+
+   \      +
+    \++++++
       ++++
-       ++++
-     ++++++++++
-    +++       |
-    ++         |
-    +  -==   ==|
-   (   <*>   <*>
-    |           |
-    |         __|
-    |      +++
-     \      =+
-      \      +
-       \++++++
-         ++++
 `
+const headLongestLine = 14
+
+func HeadWithPadding() string {
+	lines := []string{}
+	for _, line := range strings.Split(Head, "\n") {
+		lines = append(lines, line+strings.Repeat(" ", headLongestLine-len(line)))
+	}
+	return strings.Join(lines, "\n")
+}
+
+func ReverseHead() string {
+	lines := []string{}
+	for _, line := range strings.Split(HeadWithPadding(), "\n") {
+		lines = append(lines, strings.TrimRight(reverse(line), " "))
+	}
+	return strings.Join(lines, "\n")
+}
 
 const Body = `
       ++
@@ -36,7 +55,7 @@ const Body = `
       |  ++++      ||//
   ____|   |____   _||/__
  /     ---     \  \|  |||
-/  _ _  __    / \   \ /
+/  _ _  _     / \   \ /
 | / / //_//_//  |   | |
 `
 
