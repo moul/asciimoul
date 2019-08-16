@@ -9,35 +9,19 @@
 [![Go Report Card](https://goreportcard.com/badge/moul.io/asciimoul)](https://goreportcard.com/report/moul.io/asciimoul)
 [![CodeFactor](https://www.codefactor.io/repository/github/moul/asciimoul/badge)](https://www.codefactor.io/repository/github/moul/asciimoul)
 [![codecov](https://codecov.io/gh/moul/asciimoul/branch/master/graph/badge.svg)](https://codecov.io/gh/moul/asciimoul)
-[![Docker Metrics](https://images.microbadger.com/badges/image/moul/asciimoul.svg)](https://microbadger.com/images/moul/asciimoul)
 [![Sourcegraph](https://sourcegraph.com/github.com/moul/asciimoul/-/badge.svg)](https://sourcegraph.com/github.com/moul/asciimoul?badge)
 [![Made by Manfred Touron](https://img.shields.io/badge/made%20by-Manfred%20Touron-blue.svg?style=flat)](https://manfred.life/)
 
 
 ## Usage
 
-```console
-$ asciimoul -h
-...
-```
+See [GoDoc](https://godoc.org/moul.io/asciimoul)
 
-## Install
-
-### Using go
+## Install the library
 
 ```console
 $ go get -u moul.io/asciimoul
 ```
-
-### Using brew
-
-```console
-$ brew install moul/moul/asciimoul
-```
-
-### Download releases
-
-https://github.com/moul/asciimoul/releases
 
 ## License
 

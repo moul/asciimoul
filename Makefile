@@ -1,10 +1,6 @@
 GO ?= go
 DOCKER_IMAGE ?= moul/asciimoul
 
-.PHONY: install
-install:
-	$(GO) install .
-
 .PHONY: test
 test:
 	echo "" > /tmp/coverage.txt
@@ -20,17 +16,3 @@ test:
 .PHONY: lint
 lint:
 	golangci-lint run --verbose ./...
-
-.PHONY: release
-release:
-	goreleaser --snapshot --skip-publish --rm-dist
-	@echo -n "Do you want to release? [y/N] " && read ans && [ $${ans:-N} = y ]
-	goreleaser --rm-dist
-
-.PHONY: docker
-docker:
-	docker build \
-	  --build-arg VCS_REF=`git rev-parse --short HEAD` \
-	  --build-arg BUILD_DATE=`date -u +"%Y-%m-%dT%H:%M:%SZ"` \
-	  --build-arg VERSION=`git describe --tags --always` \
-	  -t $(DOCKER_IMAGE) .
